@@ -1,0 +1,139 @@
+#Question 1:
+num=int(input("Enter a number:"))
+if (num % 2) == 0:
+    print("Number is even")
+else:
+        print("Number is odd")
+
+#question 2:
+year = int(input("Enter a year:"))
+if (year % 4) == 0:
+   if (year % 100) == 0:
+       if (year % 400) == 0:
+           print("Number is a leap year".format(year))
+       else:
+           print("Number is not a leap year".format(year))
+   else:
+       print("Number is a leap year".format(year))
+else:
+   print("Number is not a leap year".format(year))
+
+#Question 3:
+c=input("please enter a character:")
+if(c=="a" or c=="e" or c=="i" or c=="o" or c=="u" or c=="A" or c=="E" or c=="I" or c=="O" or c=="U"):
+    print("the given character",c,"is a vowel")
+else:
+    print("the given character",c,"is a consonant")
+
+#Question 4:
+num1=int(input("Enter your first number:"))
+num2=int(input("Enter your second number: "))
+if(num1<num2):
+    print("first is smallest".format(num1))
+elif(num2<num1):
+    print("second is smallest".format(num2))
+else:
+    print("first and second are equal".format(num1,num2))
+
+#Question 5:
+num = 7
+factorial = 1
+if num < 0:
+   print("invalid command")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial)
+
+#Question 6:
+size= 4
+a=(2*size)-2
+
+for i in range (0,size):
+    for j in range (0,a):
+        print(end=" ")
+    a=a-1
+    for j in range (0,i+1):
+        print("*",end=' ')
+    print(" ")
+
+#Question 7:
+def PrintNumber(N, Original, K, flag):
+    print(N, end=" ")
+
+    if (N <= 0):
+        if (flag == 0):
+            flag = 1
+        else:
+            flag = 0
+
+    if (N == Original and (not (flag))):
+        return
+
+    if (flag == True):
+        PrintNumber(N - K, Original, K, flag)
+        return
+
+    if (not (flag)):
+        PrintNumber(N + K, Original, K, flag);
+        return
+
+
+N = 20
+K = 6
+PrintNumber(N, N, K, True)
+
+#Question 8:
+num = 407
+num = int(input("Enter a number: "))
+if num > 1:
+
+    for i in range(2, num):
+        if (num % i) == 0:
+            print(num, "is not a prime number")
+            print(i, "times", num // i, "is", num)
+            break
+    else:
+        print(num, "is a prime number")
+else:
+
+    print(num, "is not a prime number")
+
+#Question 9:
+def add(x, y):
+    return x + y
+
+
+def subtract(x, y):
+    return x - y
+
+
+def multiply(x, y):
+    return x * y
+
+
+def divide(x, y):
+    return x / y
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+choice = input("Enter choice(1/2/3/4): ")
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+if choice == '1':
+    print(num1, "+", num2, "=", add(num1, num2))
+elif choice == '2':
+    print(num1, "-", num2, "=", subtract(num1, num2))
+elif choice == '3':
+    print(num1, "*", num2, "=", multiply(num1, num2))
+elif choice == '4':
+    print(num1, "/", num2, "=", divide(num1, num2))
+else:
+    print("Invalid input")
